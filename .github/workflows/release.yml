@@ -1,0 +1,98 @@
+name: Build and release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. v1.0.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            label: Windows
+            exe_name: CrimsonKeyRebind.exe
+            archive_name: CrimsonKeyRebind-Windows.7z
+          - os: ubuntu-latest
+            label: Linux
+            exe_name: CrimsonKeyRebind
+            archive_name: CrimsonKeyRebind-Linux.7z
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build executable (Windows)
+        if: runner.os == 'Windows'
+        run: pyinstaller --onefile --windowed --name CrimsonKeyRebind rebind_crimson.py
+
+      - name: Build executable (Linux)
+        if: runner.os == 'Linux'
+        run: pyinstaller --onefile --name CrimsonKeyRebind rebind_crimson.py
+
+      - name: Stage release contents (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path staging
+          Copy-Item dist\${{ matrix.exe_name }} staging\
+          Copy-Item -Recurse Movement_keys_rebind staging\
+          Copy-Item -Recurse vanilla_sources_files staging\
+          Copy-Item readme.txt staging\
+
+      - name: Stage release contents (Unix)
+        if: runner.os != 'Windows'
+        run: |
+          mkdir -p staging
+          cp dist/${{ matrix.exe_name }} staging/
+          chmod +x staging/${{ matrix.exe_name }}
+          cp -r Movement_keys_rebind staging/
+          cp -r vanilla_sources_files staging/
+          cp readme.txt staging/
+
+      - name: Create .7z archive
+        shell: bash
+        run: cd staging && 7z a "../${{ matrix.archive_name }}" .
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.archive_name }}
+          path: ${{ matrix.archive_name }}
+          if-no-files-found: error
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: CrimsonKeyRebind-*
+          merge-multiple: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.tag }}
+          name: CrimsonKeyRebind ${{ github.event.inputs.tag }}
+          files: artifacts/*
+          generate_release_notes: true

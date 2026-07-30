@@ -1,0 +1,2044 @@
+﻿<Option BaseGroups="CameraMove CameraRotate CharacterAction DebugInput PlayerCameraFunction GimmickInput"/>
+<AllowCustomizeInputKey>
+	<KeyboardMouse Key="f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12"/>
+	<KeyboardMouse Key="num0 num1 num2 num3 num4 num5 num6 num7 num8 num9"/>
+	<KeyboardMouse Key="num* num/ num- num+ num."/>
+	<KeyboardMouse Key="insert home pageup delete end pagedown"/>
+	<KeyboardMouse Key="` 1 2 3 4 5 6 7 8 9 0 - + backspace"/>
+	<KeyboardMouse Key="q e r t y u i o p [ ] &#92;"/>
+	<KeyboardMouse Key="f g h j k l ; &quot;"/>
+	<KeyboardMouse Key="z x c v b n m , . /"/>
+	<KeyboardMouse Key="left up right down"/>
+	<KeyboardMouse Key="escape tab caps lshift ctrl alt space rctrl rshift enter"/>
+	<KeyboardMouse Key="mouseL mouseR mouseM mouseX1 mouseX2"/>
+
+	<GamePad Key="padU padD padR padL buttonA buttonB buttonX buttonY buttonLT buttonLB buttonRT buttonRB buttonRS buttonLS"/>
+</AllowCustomizeInputKey>
+
+<!-- KeyBoard -->
+<ForceTriggerOnRelease SubGroupList="Run Jump Evade Guard Crouch WeaponInOut CallVehicle Cancel ToggleHardLockOn Skill_5 Portion NorAttack HardAttack FistAttack SubAttack Skill_10 Skill_11 Skill_16 Skill_1 Skill_2 Skill_3 Skill_6 Skill_7 Skill_4 Skill_17 Skill_8 Skill_13 Skill_18 Skill_20 Skill_21 Skill_22 Skill_23 Skill_24"/>
+<BlockMainKeyRemoval SubGroupList="Interaction1 Interaction2 Interaction3 Interaction4 GimmickInspect GimmickLeft GimmickRight GimmickOperation1 GimmickOperation2"/>
+
+<InteractionBlock SubGroupList=""/>
+
+<CheckType Key="Action" UIName="기본 입력 그룹"></CheckType>
+
+<CustomizationGroup Name="Action_Basic" UIName="기본" CheckType="Action">
+	<SubGroup Name="Run Jump Evade Guard Crouch Cancel ToggleHardLockOn Skill_5"></SubGroup>
+</CustomizationGroup>
+
+<CustomizationGroup Name="Action_Battle" UIName="기본 (전투)" CheckType="Action">
+	<SubGroup Name="NorAttack HardAttack FistAttack SubAttack Skill_10 Skill_11 Skill_16 Skill_1 Skill_2 Skill_3 Skill_6 Skill_7 Skill_4 Skill_17 Skill_8 Skill_13 Skill_18"></SubGroup>
+</CustomizationGroup>
+
+<CustomizationGroup Name="Action_Battle_Elemental" UIName="기본 (스킬: 원소)" CheckType="Action" SelectOption="ElementalControlOption">
+	<SubGroup Name="Skill_24 Skill_20 Skill_21 Skill_22 Skill_23"></SubGroup>
+</CustomizationGroup>
+
+<CustomizationGroup Name="UIGroup" UIName="기본 (퀵슬롯 및 연관 동작)"  CheckType="Action" SelectOption="QuickSlotSyncOption">
+	<SubGroup Name="Key_QuickSlot_Mercenary CallVehicle Key_QuickSlot_Equip WeaponInOut Key_QuickSlot_SkillFood Portion"></SubGroup>
+</CustomizationGroup>
+
+<CustomizationGroup Name="UIBasic" UIName="기본(UI 단축키)" CheckType="Action">
+	<SubGroup Name="OpenInventory OpenWorldMap OpenSkillTree OpenJournal OpenMainMenu OpenPhotoMode"></SubGroup>
+</CustomizationGroup>
+
+<CustomizationPreset Name="PresetA" UIName="프리셋 A" Path="miscellaneous/inputPresetA.save"/>
+<CustomizationPreset Name="PresetB" UIName="프리셋 B" Path="miscellaneous/inputPresetB.save"/>
+
+<SubGroup Name="Guard" UIName="조준/가드" UIDesc="조준/가드 (빛모으기/랜턴 들기)">
+	<Input Name="Key_JustGuard"/>
+	<Input Name="ToggleLockOn"/>
+	<Input Name="LockOnPress"/>
+	<Input Name="Key_Guard_Start"/>
+	<Input Name="Key_Guard"/>
+	<Input Name="Key_Guard_DownOnce"/>
+	<Input Name="Key_Guard_Release"/>
+	<Input Name="ReleaseLockOn"/>
+	<Input Name="UpdateLockOn"/>
+	<Input Name="RemoteCatch_ControlPosition_Precision"/>	
+
+	<Input Name="Key_Skill_8_Combo"/>
+	<Input Name="Key_Skill_8_Combo_Start"/>
+	<Input Name="Key_Climb_Aim"/>
+
+	<Input Name="InteractionLookAt2"/>
+	<Input Name="InteractionLookAt2Release"/>
+	<Input Name="InteractionLookAt3"/>
+	<Input Name="InteractionLookAt3Release"/>
+	<Input Name="InteractionLookAtDummy"/>	
+</>
+<SubGroup Name="Run" UIName="달리기" UIDesc="달리기">
+	<Input Name="Key_Dash"/>
+	<Input Name="Key_Run"/>
+	<Input Name="Key_Run_Once"/>
+	<Input Name="Key_Run_Press"/>
+	<Input Name="Key_Run_Once_AccByInput"/>
+	<Input Name="Key_GuideNPCPlayerAutoMove"/>
+	<Input Name="VehicleAccelerate"/>
+</>
+<SubGroup Name="Jump" UIName="점프" UIDesc="점프">
+	<Input Name="Key_Jump"/>
+	<Input Name="Key_Jump_Release"/>
+	<Input Name="Key_Jump_Press"/>
+	<Input Name="Key_Jump_PressStart"/>	
+	<Input Name="Key_Jump_ing"/>
+	<Input Name="Key_ClimbStart"/>
+	<Input Name="Key_ClimbIng"/>
+	<Input Name="Key_GlideStart"/>
+	<Input Name="Key_GlideEnd"/>
+	<Input Name="VehicleReverse"/>
+</>
+<SubGroup Name="Evade" UIName="회피" UIDesc="회피">
+	<Input Name="Key_JustEvade"/>
+	<Input Name="Key_Brake"/>
+	<Input Name="Key_Roll"/>
+	<Input Name="Key_Roll_Repeat"/>
+	<Input Name="Key_Roll_Press"/>	
+	<Input Name="Key_Evade"/>
+	<Input Name="Key_FastEvade"/>
+	<Input Name="Key_Struggle"/>
+	<Input Name="VehicleBrake"/>
+	<Input Name="Key_ATAG_Dash"/>
+</>
+<SubGroup Name="Crouch" UIName="앉기/슬라이딩(짧게 누르기)" UIDesc="앉기/슬라이딩">
+	<Input Name="Key_Crouch"/>
+	<Input Name="Key_Crouch_Press"/>
+	<Input Name="Key_Slide"/>
+	<Input Name="Key_HangOnFloor"/>
+</>
+<SubGroup Name="Cancel" UIName="취소하기/내리기" UIDesc="취소하기/내리기">
+	<Input Name="Key_Cancel"/>
+	<Input Name="Key_Cancel_Any"/>
+	<Input Name="Key_Climb_End"/>
+	<Input Name="Key_Mabongpa_Cancel"/>
+	<Input Name="Key_BlackWolf_Cancel"/>
+
+	<Input Name="Key_Interaction"/>
+	<Input Name="Key_Interaction_Press"/>
+	<Input Name="Key_Interaction_DownOnce"/>
+	<Input Name="Key_Interaction_Drop"/>
+	<Input Name="Key_Interaction_Release"/>
+	<Input Name="Key_RideOnOff"/>
+</>
+
+<SubGroup Name="WeaponInOut" UIName="무기 꺼내기/넣기" UIDesc="무기 꺼내기/넣기" ParentSubGroup="Key_QuickSlot_Equip">
+	<Input Name="Key_WeaponInOut"/>
+</>
+<SubGroup Name="CallVehicle" UIName="말 부르기" UIDesc="말 부르기" ParentSubGroup="Key_QuickSlot_Mercenary">
+	<Input Name="Key_CallVehicle"/>
+</>
+<SubGroup Name="ToggleHardLockOn" UIName="대상 고정" UIDesc="대상 고정">
+	<Input Name="ToggleHardLockOn"/>
+	<Input Name="Key_TerrainInteraction"/>	
+</>
+<SubGroup Name="NorAttack" UIName="약공격" UIDesc="약공격">
+	<Input Name="Key_JustGuard_NorAttack"/>
+	<Input Name="Key_Skill_12"/>
+	<Input Name="Key_Skill_12_Start"/>
+	<Input Name="Key_NorAttack"/>
+	<Input Name="Key_NorAttack_DownOnce"/>
+	<Input Name="Key_NorAttack_Release"/>
+	<Input Name="Key_NorAttack_PressStart"/>
+	<Input Name="VehicleHandBrake"/>
+	<Input Name="Key_ATAG_RightArm"/>
+	<Input Name="RemoteCatch_ControlPosition_Pull"/>
+</>
+<SubGroup Name="SubAttack" UIName="원거리 조준" UIDesc="원거리 조준">
+	<Input Name="Key_JustGuard_SubAttack"/>
+	<Input Name="Key_SubAttack"/>
+	<Input Name="Key_SubAttack_PressStart"/>
+	<Input Name="Key_SubAttack_Start"/>
+	<Input Name="Key_ATAG_Aim"/>
+	<Input Name="Key_ATAG_Aim_Start"/>
+	<Input Name="Key_Climb_Hold"/>
+	<Input Name="Key_Climb_Hold_PressStart"/>
+</>
+<SubGroup Name="HardAttack" UIName="강공격 / {StaticInfo:Knowledge:Knowledge_DeadEyes} 목표 지정" UIDesc="강공격 / {StaticInfo:Knowledge:Knowledge_DeadEyes} 목표 지정">
+	<Input Name="Key_JustGuard_HardAttack"/>
+	<Input Name="Key_Skill_9"/>
+	<Input Name="Key_Skill_9_Start"/>
+	<Input Name="Key_HardAttack"/>
+	<Input Name="Key_HardAttack_DownOnce"/>
+	<Input Name="Key_RangeAttack"/>
+	<Input Name="Key_RangeAttackStart"/>
+	<Input Name="VehicleRespawn"/>
+	<Input Name="Key_DeadEyeTargetting"/>
+	<Input Name="Key_ATAG_LeftArm"/>
+	<Input Name="Key_Focus_Mabongpa"/>
+	<Input Name="RemoteCatch_ControlPosition_Push"/>
+</>
+<SubGroup Name="FistAttack" UIName="주먹/발차기" UIDesc="주먹/발차기">
+	<Input Name="Key_Skill_14"/>
+	<Input Name="Key_Skill_14_Start"/>
+	<Input Name="Key_KickAttack_Start"/>
+	<Input Name="Key_KickAttack_PressStart"/>
+	<Input Name="Key_KickAttack"/>
+	<Input Name="Key_FistAttack"/>
+	<Input Name="Key_KickAttack_DownOnce"/>
+
+	<Input Name="Key_BlackWolf_Seal"/>
+</>
+<SubGroup Name="Skill_10" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Detect}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Detect}">
+	<Input Name="Key_Skill_10"/>
+	<Input Name="Key_Skill_10_Start"/>
+</>
+<SubGroup Name="Skill_11" UIName="스킬: {StaticInfo:Knowledge:Knowledge_BlackWolf}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_BlackWolf}">
+	<Input Name="Key_Skill_11"/>
+	<Input Name="Key_Skill_11_Start"/>
+	<Input Name="Key_Skill_11_DownOnce"/>
+	<Input Name="Key_Mabongpa_Trap"/>
+</>
+<SubGroup Name="Skill_16" UIName="스킬: {StaticInfo:Knowledge:Knowledge_JiJeongTa_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_JiJeongTa_I}">
+	<Input Name="Key_Skill_16"/>
+	<Input Name="Key_Skill_16_Start"/>
+	<Input Name="Key_Skill_16_Combo"/>
+	<Input Name="Key_Skill_16_Combo_Press"/>
+	<Input Name="Key_Mabongpa_Unleash"/>
+</>
+<SubGroup Name="Skill_1" UIName="스킬: {StaticInfo:Knowledge:Knowledge_RotationBash_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_RotationBash_I}">
+	<Input Name="Key_Skill_1"/>
+	<Input Name="Key_Skill_1_Start"/>
+</>
+<SubGroup Name="Skill_2" UIName="스킬: {StaticInfo:Knowledge:Knowledge_ShieldMastery_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_ShieldMastery_I}">
+	<Input Name="Key_Skill_2"/>
+	<Input Name="Key_Skill_2_Start"/>
+</>
+<SubGroup Name="Skill_3" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Lunge_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Lunge_I}" ConsumeOnPress="True">
+	<Input Name="Key_Skill_3"/>
+	<Input Name="Key_Skill_3_Start"/>
+</>
+<SubGroup Name="Skill_6" UIName="스킬: {StaticInfo:Knowledge:Knowledge_EvadeAttack}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_EvadeAttack}">
+	<Input Name="Key_Skill_6"/>
+	<Input Name="Key_Skill_6_Start"/>
+</>
+<SubGroup Name="Skill_7" UIName="스킬: {StaticInfo:Knowledge:Knowledge_TurnBash_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_TurnBash_I}">
+	<Input Name="Key_Skill_7"/>
+	<Input Name="Key_Skill_7_Start"/>
+</>
+<SubGroup Name="Skill_4" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Wrestle_Throw}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Wrestle_Throw}">
+	<Input Name="Key_Skill_4"/>
+	<Input Name="Key_Skill_4_Start"/>
+</>
+<SubGroup Name="Skill_17" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Wrestle_Takedown}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Wrestle_Takedown}">
+	<Input Name="Key_Skill_17"/>
+	<Input Name="Key_Skill_17_Start"/>
+</>
+<SubGroup Name="Skill_8" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Light_Reflection}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Light_Reflection}">
+	<Input Name="Key_Skill_8"/>
+	<Input Name="Key_Skill_8_Start"/>
+</>
+<SubGroup Name="Skill_13" UIName="스킬: {StaticInfo:Knowledge:Knowledge_SubWeaponToggle}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_SubWeaponToggle}">
+	<Input Name="Key_Skill_13"/>
+</>
+<SubGroup Name="Skill_18" UIName="스킬: {StaticInfo:Knowledge:Knowledge_ElementalReinforce}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_ElementalReinforce}">
+	<Input Name="Key_Skill_18"/>
+	<Input Name="Key_Skill_18_Start"/>
+</>
+<SubGroup Name="Skill_20" UIName="스킬: {StaticInfo:Knowledge:Knowledge_MpFire}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_MpFire}" CheckType="ElementalControlOption_Standard">
+	<Input Name="Key_Skill_20"/>
+	<Input Name="Key_Skill_20_Start"/>
+</>
+<SubGroup Name="Skill_21" UIName="스킬: {StaticInfo:Knowledge:Knowledge_MpIce}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_MpIce}" CheckType="ElementalControlOption_Standard">
+	<Input Name="Key_Skill_21"/>
+	<Input Name="Key_Skill_21_Start"/>
+</>
+<SubGroup Name="Skill_22" UIName="스킬: {StaticInfo:Knowledge:Knowledge_MpLightning}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_MpLightning}" CheckType="ElementalControlOption_Standard">
+	<Input Name="Key_Skill_22"/>
+	<Input Name="Key_Skill_22_Start"/>
+</>
+<SubGroup Name="Skill_23" UIName="스킬: {StaticInfo:Knowledge:Knowledge_MpWind}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_MpWind}" CheckType="ElementalControlOption_Standard">
+	<Input Name="Key_Skill_23"/>
+	<Input Name="Key_Skill_23_Start"/>
+</>
+<SubGroup Name="Skill_24" UIName="스킬: 원소 (선택)" UIDesc="스킬: 원소 (선택) <br/>퀵슬롯에서 원하는 원소를 선택 후 스킬을 사용하실 수 있습니다." CheckType="ElementalControlOption_UseQuickSlot" UITexturePath="cd_playguideimage_customiize_control_element">
+	<Input Name="Key_Skill_24"/>
+	<Input Name="Key_Skill_24_Start"/>
+</>
+<SubGroup Name="Skill_5" UIName="장비 아이템 사용" UIDesc="장비 아이템 사용">
+	<Input Name="Key_Skill_5"/>
+	<Input Name="Key_Skill_5_Start"/>
+	<Input Name="HudDetectMode2"/>
+</>
+
+<SubGroup Name="Portion" UIName="음식 먹기" UIDesc="음식 먹기" ParentSubGroup="Key_QuickSlot_SkillFood">
+	<Input Name="HudSkillSlotRelease"/>
+	<Input Name="HudUseSpecialReserveItemPress"/>
+</>
+
+<SubGroup Name="Key_QuickSlot_Equip" UIName="장비 퀵슬롯 열기" UIDesc="장비 퀵슬롯 열기">
+	<Input Name="HudQuickSlotPress"/>
+</>
+<SubGroup Name="Key_QuickSlot_Mercenary" UIName="용병 퀵슬롯 열기" UIDesc="용병 퀵슬롯 열기">
+	<Input Name="HudHorseQuickSlotPress"/>
+</>
+<SubGroup Name="Key_QuickSlot_SkillFood" UIName="음식 퀵슬롯 열기" UIDesc="음식 퀵슬롯 열기">
+	<Input Name="HudSkillSlotPress"/>
+</>
+
+<!-- GamePad -->
+<ForceTriggerOnReleaseForPad 
+	SubGroupList="Run Jump Evade Guard Crouch ToggleHardLockOn NorAttack HardAttack FistAttack SubAttack Skill_10 Skill_11 Skill_16 Skill_1 Skill_2 Skill_3 Skill_6 Skill_7 Skill_4 Skill_5 Skill_17 Skill_8 Skill_13 Skill_18 Skill_20 Skill_21 Skill_22 Skill_23 Skill_24 Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood"/>
+<BlockMainKeyRemovalForPad SubGroupList="Interaction1 Interaction2 Interaction3 Interaction4 GimmickInspect GimmickLeft GimmickRight GimmickOperation1 GimmickOperation2"/>
+
+<InteractionBlockForPad SubGroupList="HardAttack NorAttack"/>
+
+<CheckTypeForPad Key="Action" UIName="기본 입력 그룹"></CheckTypeForPad>
+<!-- 
+<CustomizationGroupForPad Name="Action_Basic" UIName="기본" CheckType="Action" ForbiddenSubGroupList="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood">
+	<SubGroupForPad Name="Run Jump Evade Guard ToggleHardLockOn" ></SubGroupForPad>
+</CustomizationGroupForPad>
+
+<CustomizationGroupForPad Name="Action_Battle" UIName="기본 (전투)" CheckType="Action" ForbiddenSubGroupList="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood">
+	<SubGroupForPad Name="NorAttack HardAttack FistAttack SubAttack Skill_10 Skill_11 Skill_16 Skill_1 Skill_2 Skill_3 Skill_6 Skill_7 Skill_4 Skill_17 Skill_8 Skill_13 Skill_18"></SubGroupForPad>
+</CustomizationGroupForPad>
+
+<CustomizationGroupForPad Name="Action_Battle_Elemental" UIName="기본 (스킬: 원소)" CheckType="Action" SelectOption="ElementalControlOption" ForbiddenSubGroupList="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood">
+	<SubGroupForPad Name="Skill_24 Skill_20 Skill_21 Skill_22 Skill_23"></SubGroupForPad>
+</CustomizationGroupForPad>
+
+<CustomizationGroupForPad Name="UIGroup" UIName="기본 (퀵슬롯 및 연관 동작)"  CheckType="Action">
+	<SubGroupForPad Name="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood"></SubGroupForPad>
+</CustomizationGroupForPad> -->
+
+<!-- 자유도 높은 커마 -->
+
+<CustomizationGroupForPad Name="Action_Basic" UIName="기본" CheckType="Action" ForbiddenSubGroupList="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood">
+	<SubGroupForPad Name="Run Jump Evade Guard Crouch RideOff ToggleHardLockOn Skill_5"></SubGroupForPad>
+</CustomizationGroupForPad>
+
+<!-- <CheckTypeForPad Key="Skill" UIName="전투 입력 그룹"></CheckTypeForPad> -->
+<CustomizationGroupForPad Name="Action_Battle" UIName="전투 (스킬)" CheckType="Action" ForbiddenSubGroupList="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood">
+	<SubGroupForPad Name="NorAttack HardAttack SubAttack FistAttack Skill_10 Skill_11 Skill_16 Skill_1 Skill_2 Skill_3 Skill_6 Skill_7 Skill_4 Skill_17 Skill_8 Skill_13 Skill_18"></SubGroupForPad>
+</CustomizationGroupForPad>
+
+<CustomizationGroupForPad Name="Action_Battle_Elemental" UIName="기본 (스킬: 원소)" CheckType="Action" SelectOption="ElementalControlOption" ForbiddenSubGroupList="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood">
+	<SubGroupForPad Name="Skill_24 Skill_20 Skill_21 Skill_22 Skill_23"></SubGroupForPad>
+</CustomizationGroupForPad>
+
+<CustomizationGroupForPad Name="UIBasic" UIName="기본(UI 단축키)" CheckType="Action" ForbiddenSubGroupList="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood">
+	<SubGroupForPad Name="OpenInventory OpenWorldMap OpenSkillTree OpenJournal OpenPhotoMode"></SubGroup>
+</CustomizationGroupForPad>
+
+<CheckTypeForPad Key="RemoteCatch" UIName="섭리의 힘 조작 그룹"></CheckTypeForPad>
+<CustomizationGroupForPad Name="RemoteCatchGroup" UIName="섭리의 힘 조작" CheckType="RemoteCatch">
+	<ConflictKeyCheckForPad SubGroupList="Jump Evade Skill_16 RideOff"></ConflictKeyCheckForPad>
+	<SubGroupForPad Name="RemoteCatch_Pull RemoteCatch_Push RemoteCatch_Rotation_Right RemoteCatch_Rotation_Left RemoteCatch_Rotation_Up RemoteCatch_Rotation_Down"></SubGroupForPad>
+</CustomizationGroupForPad>
+
+<CheckTypeForPad Key="QuickSlot" UIName="퀵슬롯 입력 그룹"></CheckTypeForPad>
+<CustomizationGroupForPad Name="UIGroup" UIName="퀵슬롯" CheckType="QuickSlot">
+	<SubGroupForPad Name="Key_QuickSlot_Mercenary Key_QuickSlot_Equip Key_QuickSlot_SkillFood"></SubGroupForPad>
+</CustomizationGroupForPad>
+
+
+
+<CustomizationPresetForPad Name="PresetA" UIName="프리셋 A" Path="miscellaneous/inputPadPresetA.save"/>
+<CustomizationPresetForPad Name="PresetB" UIName="프리셋 B" Path="miscellaneous/inputPadPresetB.save"/>
+
+<SubGroupForPad Name="Guard" UIName="조준/가드" UIDesc="조준/가드 (빛모으기/랜턴 들기)">
+	<Input Name="Key_JustGuard"/>
+	<Input Name="ToggleLockOn"/>
+	<Input Name="LockOnPress"/>
+	<Input Name="Key_Guard_Start"/>
+	<Input Name="Key_Guard"/>
+	<Input Name="Key_Guard_DownOnce"/>
+	<Input Name="Key_Guard_Release"/>
+	<Input Name="ReleaseLockOn"/>
+	<Input Name="UpdateLockOn"/>
+
+	<Input Name="Key_Skill_8_Combo"/>
+	<Input Name="Key_Skill_8_Combo_Start"/>
+	<Input Name="Key_Climb_Aim"/>
+
+	<Input Name="InteractionLookAt2"/>
+	<Input Name="InteractionLookAt2Release"/>
+	<Input Name="InteractionLookAt3"/>
+	<Input Name="InteractionLookAt3Release"/>
+	<Input Name="InteractionLookAtDummy"/>	
+</>
+<SubGroupForPad Name="Run" UIName="달리기" UIDesc="달리기">
+	<Input Name="Key_Dash"/>
+	<Input Name="Key_Run"/>
+	<Input Name="Key_Run_Once"/>
+	<Input Name="Key_Run_Press"/>
+	<Input Name="Key_Run_Once_AccByInput"/>
+	<Input Name="Key_GuideNPCPlayerAutoMove"/>
+	<Input Name="VehicleAccelerate"/>
+</>
+<SubGroupForPad Name="Jump" UIName="점프" UIDesc="점프">
+	<Input Name="Key_Jump"/>
+	<Input Name="Key_Jump_Release"/>
+	<Input Name="Key_Jump_Press"/>
+	<Input Name="Key_Jump_PressStart"/>
+	<Input Name="Key_Jump_ing"/>
+	<Input Name="Key_ClimbStart"/>
+	<Input Name="Key_ClimbIng"/>
+	<Input Name="Key_GlideStart"/>
+	<Input Name="Key_GlideEnd"/>
+	<Input Name="VehicleReverse"/>
+</>
+<SubGroupForPad Name="Evade" UIName="회피/취소" UIDesc="회피/취소">
+	<Input Name="Key_JustEvade"/>
+	<Input Name="Key_Brake"/>
+	<Input Name="Key_Roll"/>
+	<Input Name="Key_Roll_Repeat"/>
+	<Input Name="Key_Roll_Press"/>
+	<Input Name="Key_Evade"/>
+	<Input Name="Key_FastEvade"/>
+	<Input Name="VehicleBrake"/>
+	<Input Name="Key_ATAG_Dash"/>
+
+<!-- 취소 -->
+	<Input Name="Key_Cancel"/>
+	<!-- <Input Name="Key_Cancel_Any"/> -->
+	<Input Name="Key_Climb_End"/>
+	<Input Name="Key_Mabongpa_Cancel"/>
+	<Input Name="Key_BlackWolf_Cancel"/>	
+</>
+
+<SubGroupForPad Name="ToggleHardLockOn" UIName="대상 고정" UIDesc="대상 고정">
+	<Input Name="ToggleHardLockOn"/>
+	<Input Name="Key_TerrainInteraction"/>	
+</>
+<SubGroupForPad Name="Crouch" IgnoreConflictCheck="True" UIName="앉기/슬라이딩(짧게 누르기)" UIDesc="앉기/슬라이딩">
+	<Input Name="Key_Crouch"/>
+	<Input Name="Key_Crouch_Press"/>
+	<Input Name="Key_Slide"/>
+	<Input Name="Key_HangOnFloor"/>
+</>
+
+<SubGroupForPad Name="NorAttack" UIName="약공격 / {StaticInfo:Knowledge:Knowledge_DeadEyes} 목표 지정" UIDesc="약공격 / {StaticInfo:Knowledge:Knowledge_DeadEyes} 목표 지정">
+	<Input Name="Key_JustGuard_NorAttack"/>
+	<Input Name="Key_Skill_12"/>
+	<Input Name="Key_Skill_12_Start"/>
+	<Input Name="Key_NorAttack"/>
+	<Input Name="Key_NorAttack_DownOnce"/>
+	<Input Name="Key_NorAttack_Release"/>
+	<Input Name="Key_NorAttack_PressStart"/>
+	<Input Name="VehicleHandBrake"/>
+	<Input Name="Key_ATAG_RightArm"/>
+	<Input Name="Key_DeadEyeTargetting"/>
+</>
+<SubGroupForPad Name="SubAttack" UIName="원거리 조준" UIDesc="원거리 조준">
+	<Input Name="Key_JustGuard_SubAttack"/>
+	<Input Name="Key_SubAttack"/>
+	<Input Name="Key_SubAttack_PressStart"/>
+	<Input Name="Key_SubAttack_Start"/>
+	<Input Name="Key_ATAG_Aim"/>
+	<Input Name="Key_ATAG_Aim_Start"/>
+	<Input Name="Key_Climb_Hold"/>
+	<Input Name="Key_Climb_Hold_PressStart"/>
+</>
+<SubGroupForPad Name="HardAttack" UIName="강공격" UIDesc="강공격">
+	<Input Name="Key_JustGuard_HardAttack"/>
+	<Input Name="Key_Skill_9"/>
+	<Input Name="Key_Skill_9_Start"/>
+	<Input Name="Key_HardAttack"/>
+	<Input Name="Key_HardAttack_DownOnce"/>
+	<Input Name="Key_RangeAttack"/>
+	<Input Name="Key_RangeAttackStart"/>
+	<Input Name="VehicleRespawn"/>
+	<!-- <Input Name="Key_DeadEyeTargetting"/> -->
+	<Input Name="Key_ATAG_LeftArm"/>
+	<!-- <Input Name="Key_Focus_Mabongpa"/> -->
+</>
+<SubGroupForPad Name="FistAttack" UIName="주먹/발차기" UIDesc="주먹/발차기">
+	<Input Name="Key_Skill_14"/>
+	<Input Name="Key_Skill_14_Start"/>
+	<Input Name="Key_KickAttack_Start"/>
+	<Input Name="Key_KickAttack_PressStart"/>
+	<Input Name="Key_KickAttack"/>
+	<Input Name="Key_FistAttack"/>
+	<Input Name="Key_KickAttack_DownOnce"/>	
+</>
+<SubGroupForPad Name="Skill_10" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Detect}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Detect}">
+	<Input Name="Key_Skill_10"/>
+	<Input Name="Key_Skill_10_Start"/>
+</>
+<!-- 섭리의 힘 -->
+<SubGroupForPad Name="Skill_11" UIName="스킬: {StaticInfo:Knowledge:Knowledge_BlackWolf}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_BlackWolf}">
+	<Input Name="Key_Skill_11"/>
+	<Input Name="Key_Skill_11_Start"/>
+	<Input Name="Key_Skill_11_DownOnce"/>
+	<Input Name="Key_Mabongpa_Trap"/>
+</>
+<SubGroupForPad Name="Skill_16" UIName="스킬: {StaticInfo:Knowledge:Knowledge_JiJeongTa_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_JiJeongTa_I}">
+	<Input Name="Key_Skill_16"/>
+	<Input Name="Key_Skill_16_Start"/>
+	<Input Name="Key_Skill_16_Combo"/>
+	<Input Name="Key_Skill_16_Combo_Press"/>
+	<Input Name="Key_Mabongpa_Unleash"/>
+</>
+<SubGroupForPad Name="Skill_1" UIName="스킬: {StaticInfo:Knowledge:Knowledge_RotationBash_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_RotationBash_I}">
+	<Input Name="Key_Skill_1"/>
+	<Input Name="Key_Skill_1_Start"/>
+</>
+<SubGroupForPad Name="Skill_2" UIName="스킬: {StaticInfo:Knowledge:Knowledge_ShieldMastery_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_ShieldMastery_I}">
+	<Input Name="Key_Skill_2"/>
+	<Input Name="Key_Skill_2_Start"/>
+</>
+<SubGroupForPad Name="Skill_3" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Lunge_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Lunge_I}" ConsumeOnPress="True">
+	<Input Name="Key_Skill_3"/>
+	<Input Name="Key_Skill_3_Start"/>
+</>
+<SubGroupForPad Name="Skill_6" UIName="스킬: {StaticInfo:Knowledge:Knowledge_EvadeAttack}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_EvadeAttack}">
+	<Input Name="Key_Skill_6"/>
+	<Input Name="Key_Skill_6_Start"/>
+</>
+<SubGroupForPad Name="Skill_7" UIName="스킬: {StaticInfo:Knowledge:Knowledge_TurnBash_I}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_TurnBash_I}">
+	<Input Name="Key_Skill_7"/>
+	<Input Name="Key_Skill_7_Start"/>
+</>
+<SubGroupForPad Name="Skill_4" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Wrestle_Throw}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Wrestle_Throw}">
+	<Input Name="Key_Skill_4"/>
+	<Input Name="Key_Skill_4_Start"/>
+</>
+<SubGroupForPad Name="Skill_17" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Wrestle_Takedown}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Wrestle_Takedown}">
+	<Input Name="Key_Skill_17"/>
+	<Input Name="Key_Skill_17_Start"/>
+</>
+<SubGroupForPad Name="Skill_8" UIName="스킬: {StaticInfo:Knowledge:Knowledge_Light_Reflection}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_Light_Reflection}">
+	<Input Name="Key_Skill_8"/>
+	<Input Name="Key_Skill_8_Start"/>
+</>
+<SubGroupForPad Name="Skill_13" UIName="스킬: {StaticInfo:Knowledge:Knowledge_SubWeaponToggle}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_SubWeaponToggle}">
+	<Input Name="Key_Skill_13"/>
+</>
+<SubGroupForPad Name="Skill_18" UIName="스킬: {StaticInfo:Knowledge:Knowledge_ElementalReinforce}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_ElementalReinforce}">
+	<Input Name="Key_Skill_18"/>
+	<Input Name="Key_Skill_18_Start"/>
+</>
+
+
+<SubGroupForPad Name="Skill_5" IgnoreConflictCheck="True" UIName="장비 아이템 사용" UIDesc="장비 아이템 사용">
+	<Input Name="Key_Skill_5"/>
+	<Input Name="Key_Skill_5_Start"/>
+	<Input Name="HudDetectMode2"/>
+</>
+
+<SubGroupForPad Name="RideOff" IgnoreConflictCheck="True" UIName="내리기/내려놓기" UIDesc="내리기/내려놓기">
+	<Input Name="Key_Interaction"/>
+	<Input Name="Key_Interaction_Press"/>
+	<Input Name="Key_Interaction_DownOnce"/>
+	<Input Name="Key_Interaction_Drop"/>
+	<Input Name="Key_Interaction_Release"/>
+	<Input Name="Key_RideOnOff"/>
+	<Input Name="Key_BlackWolf_Seal"/>
+</>
+
+<SubGroupForPad Name="RemoteCatch_Pull" UIName="당기기" UIDesc="당기기 (섭리의힘)">
+	<Input Name="RemoteCatch_ControlPosition_Pull"/>
+</>
+<SubGroupForPad Name="RemoteCatch_Push" UIName="밀기" UIDesc="밀기 (섭리의힘)">
+	<Input Name="RemoteCatch_ControlPosition_Push"/>
+</>
+<SubGroupForPad Name="RemoteCatch_Rotation_Right" UIName="오른쪽 회전" UIDesc="오른쪽 회전 (섭리의힘)">
+	<Input Name="RemoteCatch_ControlRotation_Right"/>
+	<Input Name="RemoteCatch_HingeRotation_CW"/>
+</>
+<SubGroupForPad Name="RemoteCatch_Rotation_Left" UIName="왼쪽 회전" UIDesc="왼쪽 회전 (섭리의힘)">
+	<Input Name="RemoteCatch_ControlRotation_Left"/>
+	<Input Name="RemoteCatch_HingeRotation_CCW"/>
+</>
+<SubGroupForPad Name="RemoteCatch_Rotation_Up" UIName="위 회전" UIDesc="오른쪽 회전 (섭리의힘)">
+	<Input Name="RemoteCatch_ControlRotation_Up"/>
+</>
+<SubGroupForPad Name="RemoteCatch_Rotation_Down" UIName="아래 회전" UIDesc="오른쪽 회전 (섭리의힘)">
+	<Input Name="RemoteCatch_ControlRotation_Down"/>
+</>
+
+<SubGroupForPad Name="Skill_20" UIName="스킬: {StaticInfo:Knowledge:Knowledge_MpFire}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_MpFire}" CheckType="ElementalControlOption_Standard">
+	<Input Name="Key_Skill_20"/>
+	<Input Name="Key_Skill_20_Start"/>
+</>
+<SubGroupForPad Name="Skill_21" UIName="스킬: {StaticInfo:Knowledge:Knowledge_MpIce}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_MpIce}" CheckType="ElementalControlOption_Standard">
+	<Input Name="Key_Skill_21"/>
+	<Input Name="Key_Skill_21_Start"/>
+</>
+<SubGroupForPad Name="Skill_22" UIName="스킬: {StaticInfo:Knowledge:Knowledge_MpLightning}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_MpLightning}" CheckType="ElementalControlOption_Standard">
+	<Input Name="Key_Skill_22"/>
+	<Input Name="Key_Skill_22_Start"/>
+</>
+<SubGroupForPad Name="Skill_23" UIName="스킬: {StaticInfo:Knowledge:Knowledge_MpWind}" UIDesc="스킬: {StaticInfo:Knowledge:Knowledge_MpWind}" CheckType="ElementalControlOption_Standard">
+	<Input Name="Key_Skill_23"/>
+	<Input Name="Key_Skill_23_Start"/>
+</>
+<SubGroupForPad Name="Skill_24" UIName="스킬: 원소 (퀵슬롯 선택)" UIDesc="스킬: 원소 (퀵슬롯 선택)" CheckType="ElementalControlOption_UseQuickSlot" UITexturePath="cd_playguideimage_customiize_control_element">
+	<Input Name="Key_Skill_24"/>
+	<Input Name="Key_Skill_24_Start"/>
+</>
+
+<SubGroupForPad Name="Key_QuickSlot_Equip" UIName="무기 넣기/장비 퀵슬롯 열기" UIDesc="무기 넣기/장비 퀵슬롯 열기">
+	<Input Name="Key_WeaponInOut"/>
+	<Input Name="HudQuickSlotPress"/>
+</>
+<SubGroupForPad Name="Key_QuickSlot_Mercenary" UIName="말 부르기/용병 퀵슬롯 열기" UIDesc="말 부르기/용병 퀵슬롯 열기">
+	<Input Name="Key_CallVehicle"/>
+	<Input Name="HudHorseQuickSlotPress"/>
+</>
+<SubGroupForPad Name="Key_QuickSlot_SkillFood" UIName="음식 먹기/음식 퀵슬롯 열기" UIDesc="음식 먹기/음식 퀵슬롯 열기">
+	<Input Name="HudSkillSlotPress"/>
+	<Input Name="HudSkillSlotRelease"/>
+	<Input Name="HudUseSpecialReserveItemPress"/>
+</>
+
+<SubGroupForPad Name="Key_ButtonA_SubGroup_Cd" UIName="확인" UIDesc="확인" NeedHide="True">
+	<Input Name="Key_MiniGame_A"/>
+	<Input Name="Key_Housing_Confirm"/>
+	<Input Name="Key_DialSelect"/>
+</>
+
+<SubGroupForPad Name="Key_ButtonB_SubGroup_Cd" UIName="취소" UIDesc="취소" NeedHide="True">
+	<Input Name="Key_MiniGame_B"/>
+	<Input Name="Key_Housing_Cancel"/>
+	<Input Name="Key_DialCancle"/>
+</>
+
+<InputGroup Name="CameraMove" LayerName="Camera">
+	<Input Name="CameraMoveA">
+		<KeyboardMouse Key="a" Method="press"/>
+		<KeyboardMouse Key="a" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveAltDown">
+		<KeyboardMouse Key="alt" Method="press"/>
+		<KeyboardMouse Key="alt" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveCtrlDown">
+		<KeyboardMouse Key="ctrl" Method="press"/>
+		<KeyboardMouse Key="ctrl" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveD">
+		<KeyboardMouse Key="d" Method="press"/>
+		<KeyboardMouse Key="d" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveDown">
+		<KeyboardMouse Key="down" Method="press"/>
+		<KeyboardMouse Key="down" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveE">
+		<KeyboardMouse Key="e" Method="press"/>
+		<KeyboardMouse Key="e" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveLeft">
+		<KeyboardMouse Key="left" Method="press"/>
+		<KeyboardMouse Key="left" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveLeftStick">
+		<GamePad Key="leftstick" Method="analog"/>
+	</>
+	<Input Name="CameraMoveQ">
+		<KeyboardMouse Key="q" Method="press"/>
+		<KeyboardMouse Key="q" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveRight">
+		<KeyboardMouse Key="right" Method="press"/>
+		<KeyboardMouse Key="right" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveRightStick">
+		<GamePad Key="rightstick" Method="analog"/>
+		<KeyboardMouse Key="mouseDelta" Method="analog" AnalogScaleX="1.000000" AnalogScaleY="-1.000000"/>
+	</>
+	<Input Name="CameraMoveS">
+		<KeyboardMouse Key="s" Method="press"/>
+		<KeyboardMouse Key="s" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveShiftDown">
+		<KeyboardMouse Key="shift" Method="press"/>
+		<KeyboardMouse Key="shift" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveUp">
+		<KeyboardMouse Key="up" Method="press"/>
+		<KeyboardMouse Key="up" Method="downonce"/>
+	</>
+	<Input Name="CameraMoveW">
+		<KeyboardMouse Key="w" Method="press"/>
+		<KeyboardMouse Key="w" Method="downonce"/>
+	</>
+	<Input Name="LeftBumperDown">
+		<GamePad Key="buttonLB" Method="press"/>
+		<GamePad Key="buttonLB" Method="downonce"/>
+	</>
+	<Input Name="LeftTrigger">
+		<GamePad Key="buttonLT" Method="analog"/>
+	</>
+	<Input Name="LeftTriggerRelease">
+		<GamePad Key="buttonLT" Method="release"/>
+	</>
+	<Input Name="RightBumperDown">
+		<GamePad Key="buttonRB" Method="press"/>
+		<GamePad Key="buttonRB" Method="downonce"/>
+	</>
+	<Input Name="RightTrigger">
+		<GamePad Key="buttonRT" Method="downonce"/>
+		<KeyboardMouse Key="mouseR" Method="downonce"/>
+	</>
+	<Input Name="RightTriggerRelease">
+		<GamePad Key="buttonRT" Method="release"/>
+		<KeyboardMouse Key="mouseR" Method="release"/>
+	</>
+
+	<!-- <Condition Name="BumperAllDown" Condition="LeftBumperDown & RightBumperDown"/> -->
+	<Input Name="BumperAllDown">
+		<GamePad Key="buttonLB buttonRB" Method="press"/>
+		<GamePad Key="buttonLB buttonRB" Method="downonce"/>
+	</>
+	<Input Name="Camera_Housing_Detail_MoveAnalog">
+		<GamePad Key="padU" Method="analog" AnalogScaleX="0.000000" AnalogScaleY="1.000000"/>
+		<GamePad Key="padL" Method="analog" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+		<GamePad Key="padD" Method="analog" AnalogScaleX="0.000000" AnalogScaleY="-1.000000"/>
+		<GamePad Key="padR" Method="analog" AnalogScaleX="1.000000" AnalogScaleY="0.000000"/>
+	</>
+	<Input Name="Camera_Housing_MoveAnalog">
+		<GamePad Key="leftstick" Method="analog"/>
+	</>
+	<Input Name="Camera_Housing_MoveAnalogUp">
+		<KeyboardMouse Key="w" Method="analog" AnalogScaleX="0.000000" AnalogScaleY="1.000000"/>
+	</>
+	<Input Name="Camera_Housing_MoveAnalogLeft">
+		<KeyboardMouse Key="a" Method="analog" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+	</>
+	<Input Name="Camera_Housing_MoveAnalogDown">
+		<KeyboardMouse Key="s" Method="analog" AnalogScaleX="0.000000" AnalogScaleY="-1.000000"/>
+	</>
+	<Input Name="Camera_Housing_MoveAnalogRight">
+		<KeyboardMouse Key="d" Method="analog" AnalogScaleX="1.000000" AnalogScaleY="0.000000"/>
+	</>
+	<Input Name="Camera_Housing_MouseLeft">
+		<Mouse Key="mouseL" Method="press"/>
+		<Mouse Key="mouseL" Method="downonce"/>
+	</>
+	<Input Name="Camera_Housing_MouseRight">
+		<Mouse Key="mouseR" Method="press"/>
+		<Mouse Key="mouseR" Method="downonce"/>
+	</>
+	<Input Name="Camera_Housing_Detail_Move_Button">
+		<GamePad Key="buttonLT" Method="press"/>
+	</>
+</InputGroup>
+<InputGroup Name="CameraRotate" LayerName="Camera">
+	<Input Name="CameraRotateMouseDelta">
+		<KeyboardMouse Key="mouseDelta" Method="analog"/>
+	</>
+	<Input Name="CameraRotateRightStick">
+		<GamePad Key="rightstick" Method="analog"/>
+	</>
+	<Input Name="RButtonPress">
+		<KeyboardMouse Key="mouseR" Method="press"/>
+		<KeyboardMouse Key="mouseR" Method="downonce"/>
+	</>
+	<Input Name="RButtonDown">
+		<KeyboardMouse Key="mouseR" Method="downonce"/>
+	</>
+	<Input Name="RButtonUp">
+		<KeyboardMouse Key="mouseR" Method="release"/>
+	</>
+	<Input Name="ViewAroundMode">
+		<KeyboardMouse Key="mouseM" Method="press"/>
+		<KeyboardMouse Key="mouseM" Method="downonce"/>
+	</>
+</InputGroup>
+<InputGroup Name="CharacterAction" LayerName="Action" EnableConsume="False">
+	<Input Name="WeaponQuickSlotPress">
+		<GamePad Key="buttonLB" Method="press"/>
+		<GamePad Key="buttonLB" Method="downonce"/>
+	</>
+	<Input Name="SubWeaponQuickSlotPress">
+		<GamePad Key="buttonLT" Method="press"/>
+		<GamePad Key="buttonLT" Method="downonce"/>
+	</>
+	<Input Name="DPad_Right_Press">
+		<GamePad Key="padR" Method="press" Time="0.200000"/>
+	</>
+	<Input Name="DPad_Right_Up">
+		<GamePad Key="padR" Method="release"/>
+	</>
+	<Input Name="Key_1">
+		<KeyboardMouse Key="1" Method="downonce"/>
+	</>
+	<Input Name="Key_2">
+		<KeyboardMouse Key="2" Method="downonce"/>
+	</>
+	<Input Name="Key_3">
+		<KeyboardMouse Key="3" Method="downonce"/>
+	</>
+	<Input Name="Key_4">
+		<KeyboardMouse Key="4" Method="downonce"/>
+	</>
+	<Input Name="Key_5">
+		<KeyboardMouse Key="5" Method="downonce"/>
+	</>
+	<Input Name="Key_6">
+		<KeyboardMouse Key="6" Method="downonce"/>
+	</>
+	<Input Name="Key_MiniGame_A">
+		<GamePad Name="OverridePadKey" Key="buttonA" Method="downonce"/>
+		<KeyboardMouse Key="f" Method="downonce"/>
+	</>
+	<Input Name="Key_MiniGame_B">
+		<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+		<KeyboardMouse Key="t" Method="downonce"/>
+	</>
+	<Input Name="Key_MiniGame_Press_B">
+		<GamePad Key="buttonB" Method="press" Time="0.5"/>
+		<KeyboardMouse Key="t" Method="press" Time="0.5"/>
+	</>
+	<Input Name="Key_MiniGame_X">
+		<GamePad Key="buttonX" Method="downonce"/>
+		<KeyboardMouse Key="e" Method="downonce"/>
+	</>
+	<Input Name="Key_MiniGame_Y">
+		<GamePad Key="buttonY" Method="downonce"/>
+		<KeyboardMouse Key="r" Method="downonce"/>
+	</>
+
+	<Input Name="Key_Housing_PushInventory">
+		<GamePad Key="buttonY" Method="release"/>
+		<KeyboardMouse Key="f" Method="release"/>
+	</>
+	<Input Name="Key_Housing_Pull">
+		<GamePad Key="buttonX" Method="release"/>
+		<!-- <KeyboardMouse Key="r" Method="release"/> -->
+	</>
+	<Input Name="Key_Housing_Confirm">
+		<GamePad Name="OverridePadKey" Key="buttonA" Method="release"/>
+		<KeyboardMouse Key="space" Method="release"/>
+		<KeyboardMouse Key="mouseL" Method="release"/>
+	</>
+	<Input Name="Key_Housing_Cancel">
+		<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+		<KeyboardMouse Key="escape" Method="release"/>
+	</>
+	<Input Name="Key_Housing_OpenMenu">
+		<GamePad Key="buttonX" Method="release"/>
+		<KeyboardMouse Key="r" Method="release"/>
+		<KeyboardMouse Key="mouseM" Method="release"/>
+	</>
+	<Input Name="Key_Housing_ChangeHouse">
+		<GamePad Key="buttonRS" Method="release"/>
+		<KeyboardMouse Key="f1" Method="release"/>
+	</>
+
+		<Input Name="Key_Guard_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="press"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+		</>
+		<Input Name="Key_Guard">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="press"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+		</>
+		<Input Name="Key_Guard_DownOnce">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+		</>
+		<Input Name="Key_Guard_Release">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="release"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="release"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="release"/>
+		</>
+
+		<Input Name="Key_Interaction">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+		<Input Name="Key_Interaction_Press">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="press" Time="0.3"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="press" Time="0.3"/>
+		</>
+		<Input Name="Key_Interaction_DownOnce">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+		<Input Name="Key_Interaction_Drop">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+		<Input Name="Key_Interaction_Release">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="release" ReleaseTime="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="release" ReleaseTime="0.2"/>
+		</>
+		<Input Name="Key_RideOnOff" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+		
+	<Input Name="Key_PadLeftRight">
+		<GamePad Key="padL" Method="downonce"/>
+		<GamePad Key="padR" Method="downonce"/>
+		<KeyboardMouse Key="q" Method="downonce"/>
+		<KeyboardMouse Key="e" Method="downonce"/>
+	</>
+	<Input Name="Key_PadLeft">
+		<GamePad Key="padL" Method="downonce"/>
+		<KeyboardMouse Key="a" Method="downonce"/>
+	</>
+	<Input Name="Key_PadLeft_Press">
+		<GamePad Key="padL" Method="press"/>
+		<GamePad Key="padL" Method="downonce"/>
+	</>
+	<Input Name="Key_PadRight">
+		<GamePad Key="padR" Method="downonce"/>
+		<KeyboardMouse Key="d" Method="downonce"/>
+	</>
+	<Input Name="Key_PadUp">
+		<GamePad Key="padU" Method="downonce"/>
+		<KeyboardMouse Key="w" Method="downonce"/>
+	</>
+	<Input Name="Key_PadDown">
+		<GamePad Key="padD" Method="downonce"/>
+		<KeyboardMouse Key="s" Method="downonce"/>
+	</>
+	<Input Name="Key_LeftStick">
+		<GamePad Key="buttonLS" Method="downonce"/>
+		<KeyboardMouse Key="z" Method="downonce"/>
+	</>
+	<Input Name="Key_RightStick">
+		<GamePad Key="buttonRS" Method="downonce"/>
+		<KeyboardMouse Key="g" Method="downonce"/>
+	</>
+		<Input Name="Key_Cancel" KeepTriggered="0.1" ConsumeOnUse="True">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+
+		<Input Name="Key_Cancel_Any" ConsumeOnUse="True">
+			<GamePad Key="buttonX" Method="downonce"/>
+			<GamePad Key="buttonY" Method="downonce"/>
+			<GamePad Key="buttonA" Method="downonce"/>
+			<GamePad Key="buttonB" Method="downonce"/>
+			<GamePad Key="buttonRB" Method="downonce"/>
+			<GamePad Key="buttonRT" Method="downonce"/>
+			<GamePad Key="buttonLB" Method="downonce"/>
+			<GamePad Key="buttonLT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+
+		<Input Name="Key_Brake">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="press"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="press"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="downonce"/>
+		</>
+		<Input Name="Key_Roll">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="downonce"/>
+		</>
+		<Input Name="Key_Roll_Press">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="press" Time="0.15"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="press" Time="0.15"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="press" Time="0.15"/>
+		</>
+		<Input Name="Key_Roll_Repeat" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="doubleclick"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="doubleclick"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="doubleclick"/>
+		</>
+		<Input Name="Key_Evade" KeepTriggered="0.1">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="downonce"/>
+		</>
+		<Input Name="Key_FastEvade" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="doubleclick"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="doubleclick"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="doubleclick"/>
+		</>
+
+	<Input Name="Key_SearchMode">
+		<GamePad Key="buttonRS" Method="press" Time="0.500000"/>
+		<KeyboardMouse Key="g" Method="downonce"/>
+	</>
+	<Input Name="Key_Taeguk">
+		<KeyboardMouse Key="mouseL" Method="press"/>
+		<KeyboardMouse Key="mouseL" Method="downonce"/>
+	</>
+	<Input Name="Key_WallHide">
+		<GamePad Key="buttonY" Method="downonce"/>
+		<KeyboardMouse Key="e" Method="downonce"/>
+	</>
+	<Input Name="Key_Struggle">
+		<GamePad Key="buttonX" Method="downonce"/>
+		<GamePad Key="buttonY" Method="downonce"/>
+		<GamePad Key="buttonA" Method="downonce"/>
+		<GamePad Key="buttonB" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey1" Key="alt" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="downonce"/>
+	</>
+	<Input Name="Key_DialSelect">
+		<GamePad Name="OverridePadKey" Key="buttonA" Method="downonce"/>
+		<KeyboardMouse Key="space" Method="downonce"/>
+	</>
+	<Input Name="Key_DialCancle">
+		<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+		<KeyboardMouse Key="escape" Method="downonce"/>
+	</>
+	<Input Name="Key_DialTurnL">
+		<GamePad Key="padL" Method="press"/>
+		<GamePad Key="padL" Method="downonce"/>
+		<KeyboardMouse Key="a" Method="press"/>
+		<KeyboardMouse Key="a" Method="downonce"/>
+	</>
+	<Input Name="Key_DialTurnLStop">
+		<GamePad Key="padL" Method="release"/>
+		<KeyboardMouse Key="a" Method="release"/>
+	</>
+	<Input Name="Key_DialTurnR">
+		<GamePad Key="padR" Method="press"/>
+		<GamePad Key="padR" Method="downonce"/>
+		<KeyboardMouse Key="d" Method="press"/>
+		<KeyboardMouse Key="d" Method="downonce"/>
+	</>
+	<Input Name="Key_DialTurnRStop">
+		<GamePad Key="padR" Method="release"/>
+		<KeyboardMouse Key="d" Method="release"/>
+	</>
+
+	<Input Name="Key_TurnPageBack">
+		<GamePad Key="buttonRB" Method="downonce"/>
+		<KeyboardMouse Key="c" Method="downonce"/>
+	</>
+	<Input Name="Key_TurnPageForward">
+		<GamePad Key="padL" Method="release" ReleaseTime="0.2"/>
+		<KeyboardMouse Key="a" Method="release" ReleaseTime="0.2"/>
+	</>
+	<Input Name="Key_BookClose" EnableBlockTrigger="True">
+		<GamePad Key="padL" Method="press" Time="0.5"/>
+		<KeyboardMouse Key="a" Method="press" Time="0.5"/>
+	</>
+
+	<Input Name="Key_RemoteCatchStart0">
+		<GamePad Key="buttonLB" Method="downonce"/>
+	</>
+	<Input Name="Key_RemoteCatchStart1">
+		<GamePad Key="buttonRB" Method="downonce"/>
+	</>
+
+	<Input Name="LeftStickDownOnce">
+		<GamePad Key="buttonLS" Method="downonce"/>
+		<KeyboardMouse Key="z" Method="downonce"/>
+	</>
+	<Input Name="RightStickDownOnce">
+		<GamePad Key="buttonRS" Method="downonce"/>
+		<KeyboardMouse Key="g" Method="downonce"/>
+	</>
+	<Input Name="Key_SpeedUp" KeepTriggered="0.3">
+		<GamePad Key="buttonA" Method="repeat"/>
+		<KeyboardMouse Key="space" Method="repeat"/>		
+	</>
+
+	<!-- 회전가르기 -->
+		<Input Name="Key_Skill_1" >
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_1_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_1 Key_Skill_18 Key_Skill_18_Start Key_Skill_5 Key_Skill_5_Start Key_Skill_5_DownOnce Key_Skill_8 Key_Skill_8_Start Key_Skill_9 Key_Skill_9_Start Key_NorAttack Key_RangeAttack">
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL mouseR" Method="downonce"/>
+		</>
+	<!-- 방패치기 -->
+		<Input Name="Key_Skill_2">
+			<GamePad Name="OverridePadKey" Key="buttonLB buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLB buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="ctrl mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="ctrl mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_2_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLB buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLB buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="ctrl mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="ctrl mouseR" Method="downonce"/>
+		</>
+	<!-- 찌르기 -->
+		<Input Name="Key_Skill_3">
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_3_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_3">
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift mouseR" Method="downonce"/>
+		</>
+	<!-- 잡아 던지기 -->
+		<Input Name="Key_Skill_4">
+			<GamePad Name="OverridePadKey" Key="buttonY buttonB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonY buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="f mouseL" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_4_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_4">
+			<GamePad Name="OverridePadKey" Key="buttonY buttonB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonY buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="f mouseL" Method="downonce"/>
+		</>
+	<!-- 잡아 메치기 -->
+		<Input Name="Key_Skill_17">
+			<GamePad Name="OverridePadKey" Key="buttonA buttonX" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonA buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="f mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_17_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_17">
+			<GamePad Name="OverridePadKey" Key="buttonA buttonX" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonA buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="f mouseR" Method="downonce"/>
+		</>
+	<!-- 회피베기 -->
+		<Input Name="Key_Skill_6">
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="alt mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="alt mouseL" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_6_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_6">
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="alt mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="alt mouseL" Method="downonce"/>
+		</>
+	<!-- 회전베기 -->
+		<Input Name="Key_Skill_7">
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonA" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonA" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift mouseL" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_7_Start" Consume="True" DoNotConsume="Key_Skill_7">
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonA" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB buttonA" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift mouseL" Method="downonce"/>
+		</>
+	<!-- 빛반사 -->
+		<Input Name="Key_Skill_8">
+			<GamePad Name="OverridePadKey" Key="buttonLB buttonRB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLB buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="ctrl mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="ctrl mouseL" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_8_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLB buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="ctrl mouseL" Method="downonce"/>
+		</>
+	<!-- 빛 모으기 -->
+		<Input Name="Key_Skill_8_Combo">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="press"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_8_Combo_Start">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+		</>
+	<!-- 전진베기 -->
+		<Input Name="Key_Skill_9">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_9_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_HardAttack">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_HardAttack_DownOnce" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_RangeAttack">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+		</>
+		<Input Name="Key_RangeAttackStart" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="press"/>
+		<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+		<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+	<!-- 집중 -->
+		<Input Name="Key_Skill_10">
+			<GamePad Name="OverridePadKey" Key="buttonLS buttonRS" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLS buttonRS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="x" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="x" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_10_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_10">
+			<GamePad Name="OverridePadKey" Key="buttonLS buttonRS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="x" Method="downonce"/>
+		</>
+	<!-- 섭리의힘 -->
+		<Input Name="Key_Skill_11_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="press" Time="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="tab" Method="press" Time="0.2"/>
+		</>
+		<Input Name="Key_Skill_11">
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="tab" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="tab" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_11_DownOnce" EnableBlockTrigger="True" ConsumeOnUse="True">
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="tab" Method="downonce"/>
+		</>
+	<!-- 무기 공격 -->
+		<Input Name="Key_Skill_12">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_12_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+		</>
+		<Input Name="Key_NorAttack">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+		</>
+		<Input Name="Key_NorAttack_DownOnce" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+		</>
+		<Input Name="Key_NorAttack_Release">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="release"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="release"/>
+		</>
+		<Input Name="Key_NorAttack_PressStart" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="press" Time="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="press" Time="0.2"/>
+		</>
+
+	<!-- 신속교체 -->
+		<Input Name="Key_Skill_13" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLB buttonLT" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="z" Method="press"/>
+		</>
+	<!-- 맨손 공격/발차기 -->
+		<Input Name="Key_Skill_14" UseCustomization="True">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_14_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="press" Time="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="press" Time="0.2"/>
+		</>
+		<Input Name="Key_KickAttack_Start" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="downonce"/>
+		</>
+		<Input Name="Key_KickAttack_PressStart" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="press" Time="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="press" Time="0.2"/>
+		</>
+		<Input Name="Key_KickAttack">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="downonce"/>
+		</>
+		<Input Name="Key_KickAttack_DownOnce" IgnoreGrantTime="True" Consume="MultiKeyOnly"
+			DoNotConsume="Key_Skill_14 Key_Skill_14_Start Key_FistAttack Key_KickAttack Key_KickAttack_Start Key_KickAttack_PressStart Key_BlackWolf_Seal Key_MiniGame_Y Key_Housing_PushInventory Key_Interaction Key_Interaction_Press Key_Interaction_DownOnce Key_Interaction_Drop Key_RideOnOff Key_WallHide Key_Struggle Key_HangOn Key_NorAttack">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="downonce"/>
+		</>
+		<!-- 맨손 공격 -->
+		<Input Name="Key_FistAttack" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="release" ReleaseTime="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="release" ReleaseTime="0.2"/>
+		</>
+	<!-- 지정타 -->
+		<Input Name="Key_Skill_16_Start" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonRS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseM" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_16" UseCustomization="True">
+			<GamePad Name="OverridePadKey" Key="buttonRS" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseM" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseM" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_16_Combo" KeepTriggered="0.15" ConsumeOnUse="True"
+			DoNotConsume="Key_Skill_16_Combo_Press">
+			<GamePad Name="OverridePadKey" Key="buttonRS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseM" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_16_Combo_Press">
+			<GamePad Name="OverridePadKey" Key="buttonRS" Method="press" Time="0.4"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseM" Method="press" Time="0.4"/>
+		</>
+		<Input Name="Key_Skill_16_Combo_Optional" KeepTriggered="0.15" ConsumeOnUse="True">
+			<GamePad Key="buttonLS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseM" Method="downonce"/>
+		</>
+	<!-- 화염 스킬 -->
+		<Input Name="Key_Skill_20" UseCustomization="True" UIName="스킬20" UIDesc="속성 기술 : 화염">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="1" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_20_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="1" Method="downonce"/>
+		</>
+	<!-- 냉기 스킬 -->
+		<Input Name="Key_Skill_21">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonX" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="2" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="2" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_21_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_21">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonX" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="2" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="2" Method="downonce"/>
+		</>
+	<!-- 벼락 스킬 -->
+		<Input Name="Key_Skill_22">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="3" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="3" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_22_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_22 Key_RangeAttack Key_JustEvade Key_Evade Key_FastEvade Key_Roll Key_Roll_Press Key_Roll_Repeat">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="3" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="3" Method="downonce"/>
+		</>
+
+	<!-- 바람 스킬 -->
+		<Input Name="Key_Skill_23">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonA" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonA" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="4" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="4" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_23_Start" EnableBlockTrigger="True" Consume="True" DoNotConsume="Key_Skill_23">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonA" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonA" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="4" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="4" Method="downonce"/>
+		</>
+	<!-- 원소 : 선택 -->
+		<Input Name="Key_Skill_24">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="1" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_24_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonY" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="1" Method="downonce"/>
+		</>
+	<!-- 팔찌 스킬 -->
+		<Input Name="Key_Skill_18">
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="v" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="v" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_18_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="v" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="v" Method="downonce"/>
+		</>
+	<!-- 윈터 -->
+		<Input Name="Key_Skill_5">
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="b" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="b" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_5_Start" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="b" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="b" Method="downonce"/>
+		</>
+		<Input Name="Key_Skill_5_DownOnce">
+			<GamePad Name="OverridePadKey" Key="buttonLT buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="b" Method="downonce"/>
+		</>
+	<!-- 무기 넣기 -->
+		<Input Name="Key_WeaponInOut">
+			<GamePad Name="OverridePadKey" Key="padL" Method="release"/>
+			<KeyboardMouse Name="OverrideKey" Key="t" Method="release"/>
+		</>
+	<!-- 원거리 무기 조준 -->
+		<Input Name="Key_SubAttack">
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="q" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="q" Method="downonce"/>
+		</>
+		<Input Name="Key_SubAttack_PressStart" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="q" Method="press"/>
+		</>
+		<Input Name="Key_SubAttack_Start" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="q" Method="downonce"/>
+		</>
+	<!-- 말 부르기 -->
+		<Input Name="Key_CallVehicle" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="padU" Method="release"/>
+			<KeyboardMouse Name="OverrideKey" Key="h" Method="release"/>
+		</>
+	<!-- 비행 -->
+		<Input Name="Key_GlideStart">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="downonce"/>
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="press" Time="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="press" Time="0.2"/>
+		</>
+		<Input Name="Key_GlideEnd">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="downonce"/>
+		</>
+	<!-- 버티기 -->
+		<Input Name="Key_Climb_Hold">
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="q" Method="press"/>
+		</>
+		<Input Name="Key_Climb_Hold_PressStart" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="q" Method="press"/>
+		</>
+	<!-- 놓기 -->
+		<Input Name="Key_Climb_End" KeepTriggered="0.1" ConsumeOnUse="True">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+	<!-- 조준하기 -->
+		<Input Name="Key_Climb_Aim">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="press"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="press"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="press"/>
+		</>
+	<!-- 바람의 장막 -->
+		<Input Name="Key_Focus_Mabongpa">
+			<GamePad Key="rightstick" Method="roll" RollTriggerValue="0.02" Time="0.5"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+	<!-- 장막 설치 -->
+		<Input Name="Key_Mabongpa_Trap" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="tab" Method="downonce"/>
+		</>
+	<!-- 기력 방출 -->
+		<Input Name="Key_Mabongpa_Unleash" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonRS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseM" Method="downonce"/>
+		</>
+	<!-- 취소하기 -->
+		<Input Name="Key_Mabongpa_Cancel" KeepTriggered="0.1" ConsumeOnUse="True">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+	<!-- 당기기 -->
+		<Input Name="Key_BlackWolf_Pull" EnableBlockTrigger="True">
+			<GamePad Key="buttonLS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="tab" Method="downonce"/>
+		</>
+	<!-- 밀기 -->
+		<Input Name="Key_BlackWolf_Push" KeepTriggered="0.3">
+			<GamePad Key="buttonRS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseM" Method="downonce"/>
+		</>
+	<!-- 봉인술 -->
+		<Input Name="Key_BlackWolf_Seal">
+			<GamePad Name="OverridePadKey" Key="buttonY" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="f" Method="downonce"/>
+		</>
+	<!-- 취소하기 -->
+		<Input Name="Key_BlackWolf_Cancel" KeepTriggered="0.1" ConsumeOnUse="True">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="r" Method="downonce"/>
+		</>
+	<!-- ATAG 오른손 -->
+		<Input Name="Key_ATAG_RightArm">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+		</>
+	<!-- ATAG 왼손 -->
+		<Input Name="Key_ATAG_LeftArm">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+	<!-- 조준하기 -->
+		<Input Name="Key_ATAG_Aim">
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="q" Method="press"/>
+		</>
+		<Input Name="Key_ATAG_Aim_Start" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="q" Method="downonce"/>
+		</>
+	<!-- 가속 -->
+		<Input Name="Key_ATAG_Dash" KeepTriggered="0.1">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="downonce"/>
+		</>
+	<!-- 열기구 조작 -->
+		<Input Name="Key_FireOn_Press" KeepTriggered="0.3">
+			<GamePad Key="buttonRT" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+		</>
+		<Input Name="Key_Boost_DownOnce" KeepTriggered="0.3">
+			<GamePad Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+		<Input Name="Key_Reverse_DownOnce" KeepTriggered="0.3">
+			<GamePad Key="buttonLT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+		</>
+	
+	<!-- CharacterMove -->
+	<Input Name="Key_HangOn">
+		<GamePad Key="buttonY" Method="press"/>
+		<GamePad Key="buttonY" Method="downonce"/>
+		<KeyboardMouse Key="f" Method="press"/>
+		<KeyboardMouse Key="f" Method="downonce"/>
+	</>
+	<Input Name="MoveAnalog">
+		<GamePad Key="leftstick" Method="analog"/>
+		<KeyboardMouse Key="a" Method="analog" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+		<KeyboardMouse Key="d" Method="analog" AnalogScaleX="1.000000" AnalogScaleY="0.000000"/>
+		<KeyboardMouse Key="s" Method="analog" AnalogScaleX="0.000000" AnalogScaleY="-1.000000"/>
+		<KeyboardMouse Key="w" Method="analog" AnalogScaleX="0.000000" AnalogScaleY="1.000000"/>
+	</>
+	<Input Name="MoveDown">
+		<KeyboardMouse Key="s" Method="press"/>
+		<KeyboardMouse Key="s" Method="downonce"/>
+	</>
+	<Input Name="MoveLeft">
+		<KeyboardMouse Key="a" Method="press"/>
+		<KeyboardMouse Key="a" Method="downonce"/>
+	</>
+	<Input Name="MoveRight">
+		<KeyboardMouse Key="d" Method="press"/>
+		<KeyboardMouse Key="d" Method="downonce"/>
+	</>
+	<Input Name="MoveUp">
+		<KeyboardMouse Key="w" Method="press"/>
+		<KeyboardMouse Key="w" Method="downonce"/>
+	</>
+	<Input Name="PickMoveTarget">
+		<KeyboardMouse Key="mouseL" Method="release"/>
+	</>
+		<Input Name="ReleaseLockOn">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="release"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="release"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="release"/>
+		</>
+		<Input Name="UpdateLockOn">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="press"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+		</>
+		<Input Name="VehicleAccelerate">
+			<GamePad Name="OverridePadKey" Key="buttonA" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonA" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift" Method="downonce"/>
+		</>
+		<Input Name="VehicleBrake">
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="press"/>
+			<KeyboardMouse Name="OverrideKey1" Key="alt" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="press"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="downonce"/>
+		</>
+		<Input Name="VehicleReverse">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="downonce"/>
+		</>
+		<Input Name="VehicleHandBrake">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+		</>
+		<Input Name="VehicleRespawn">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+
+	<Input Name="Key_SuperJump">
+		<GamePad Key="padD" Method="press"/>
+		<GamePad Key="padD" Method="downonce"/>
+		<KeyboardMouse Key="r" Method="press"/>
+		<KeyboardMouse Key="r" Method="downonce"/>
+	</>
+
+	<!-- 달리기 / 전력질주 -->
+		<Input Name="Key_Dash" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonA" Method="repeat"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift" Method="repeat"/>
+		</>
+		<Input Name="Key_Run">
+			<GamePad Name="OverridePadKey" Key="buttonA" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonA" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift" Method="downonce"/>
+		</>
+		<Input Name="Key_Run_Once">
+			<GamePad Name="OverridePadKey" Key="buttonA" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift" Method="downonce"/>
+		</>
+		<Input Name="Key_Run_Press">
+			<GamePad Name="OverridePadKey" Key="buttonA" Method="press" Time="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift" Method="press" Time="0.2"/>
+		</>
+		<Input Name="Key_Run_Once_AccByInput">
+			<GamePad Name="OverridePadKey" Key="buttonA" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="lshift" Method="downonce"/>
+		</>
+	<!-- 도약 -->
+		<Input Name="Key_Jump" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="downonce"/>		
+		</>
+		<Input Name="Key_Jump_Release">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="release" ReleaseTime="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="release" ReleaseTime="0.2"/>		
+		</>
+		<Input Name="Key_Jump_Press">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="downonce"/>
+		</>
+		<Input Name="Key_Jump_PressStart" EnableBlockTrigger="True">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="downonce"/>
+		</>
+		<Input Name="Key_Jump_ing">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="downonce"/>
+		</>
+		<Input Name="Key_ClimbStart">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="downonce"/>
+		</>
+		<Input Name="Key_ClimbIng">
+			<GamePad Name="OverridePadKey" Key="buttonX" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="space" Method="press"/>
+		</>
+	<!-- 앉기/슬라이딩 -->
+		<Input Name="Key_Crouch" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="release" ReleaseTime="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="c" Method="release" ReleaseTime="0.2"/>
+		</>
+		<Input Name="Key_Crouch_Press">
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="press" Time="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="c" Method="press" Time="0.2"/>
+		</>
+		<Input Name="Key_Slide" KeepTriggered="0.3">
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="release" ReleaseTime="0.2"/>
+			<KeyboardMouse Name="OverrideKey" Key="c" Method="release" ReleaseTime="0.2"/>
+		</>
+		<Input Name="Key_HangOnFloor">
+			<GamePad Name="OverridePadKey" Key="buttonLS" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="c" Method="downonce"/>
+		</>
+
+	<!-- 아래부터 ActionKeyByCode Layer에 있던 Input 입니다. -->
+	<Input Name="Key_GuideNPCPlayerAutoMove" KeepTriggered="0.3">
+		<GamePad Name="OverridePadKey" Key="buttonA" Method="press"/>
+		<GamePad Name="OverridePadKey" Key="buttonA" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey" Key="lshift" Method="press"/>
+		<KeyboardMouse Name="OverrideKey" Key="lshift" Method="downonce"/>
+	</>
+		
+	<Input Name="Key_JustGuard" IgnoreGrantTime="True" CoolTime="0.3">
+		<GamePad Name="OverridePadKey" Key="buttonLB" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+	</>
+	<Input Name="Key_JustGuard_NorAttack" IgnoreGrantTime="True">
+		<GamePad Name="OverridePadKey" Key="buttonRB" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+	</>
+	<Input Name="Key_JustGuard_HardAttack" IgnoreGrantTime="True">
+		<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+	</>
+	<Input Name="Key_JustGuard_SubAttack" IgnoreGrantTime="True">
+		<GamePad Name="OverridePadKey" Key="buttonLT" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey" Key="q" Method="downonce"/>
+	</>
+	<Input Name="Key_JustEvade" IgnoreGrantTime="True">
+		<GamePad Name="OverridePadKey" Key="buttonB" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey1" Key="alt" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey2" Key="mouseX2" Method="downonce"/>
+	</>
+
+	<Input Name="Key_RemoteCatchSwing_KeyBoard">
+		<KeyboardMouse Key="r" Method="downonce"/>
+	</>	
+	<Input Name="Key_RemoteCatchTreePulling">
+		<KeyboardMouse Key="mouseWheel" Method="analog"/>
+	</>
+	<Input Name="Key_RemoteCatchMove0">
+		<GamePad Key="buttonLB" Method="press"/>
+		<GamePad Key="buttonLB" Method="downonce"/>
+	</>
+	<Input Name="Key_RemoteCatchMove1">
+		<GamePad Key="buttonRB" Method="press"/>
+		<GamePad Key="buttonRB" Method="downonce"/>
+	</>
+	<!-- LB/RB Press -->
+	<!-- <Condition Name="Key_RemoteCatchDualStick" Condition="Key_RemoteCatchMove0 & Key_RemoteCatchMove1"/>	 -->
+	<Input Name="Key_RemoteCatchDualStick">
+		<GamePad Key="buttonLB buttonRB" Method="press"/>
+		<GamePad Key="buttonLB buttonRB" Method="downonce"/>
+	</>
+	
+	<Input Name="Key_RemoteCatchRotate0"> <!-- 삭제예정 -->
+		<GamePad Key="buttonRT" Method="press"/>
+		<GamePad Key="buttonRT" Method="downonce"/>
+	</>
+	<Input Name="Key_RemoteCatchRotate1"> <!-- 삭제예정 -->
+		<GamePad Key="buttonRT" Method="press"/>
+		<GamePad Key="buttonRT" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatchDPadUpPress"> <!-- 삭제예정 -->
+		<GamePad Key="padU" Method="press"/>
+		<GamePad Key="padU" Method="downonce"/>
+		<KeyboardMouse Key="w" Method="press"/>
+		<KeyboardMouse Key="w" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatchDPadDownPress"> <!-- 삭제예정 -->
+		<GamePad Key="padD" Method="press"/>
+		<GamePad Key="padD" Method="downonce"/>
+		<KeyboardMouse Key="s" Method="press"/>
+		<KeyboardMouse Key="s" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatchDPadLeftPress"> <!-- 삭제예정 -->
+		<GamePad Key="padL" Method="press"/>
+		<GamePad Key="padL" Method="downonce"/>
+		<KeyboardMouse Key="a" Method="press"/>
+		<KeyboardMouse Key="a" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatchDPadRightPress"> <!-- 삭제예정 -->
+		<GamePad Key="padR" Method="press"/>
+		<GamePad Key="padR" Method="downonce"/>
+		<KeyboardMouse Key="d" Method="press"/>
+		<KeyboardMouse Key="d" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatchDPadUp"> <!-- 삭제예정 -->
+		<GamePad Key="padU" Method="release"/>
+	</>
+	<Input Name="RemoteCatchDPadDown"> <!-- 삭제예정 -->
+		<GamePad Key="padD" Method="release"/>
+	</>
+	<Input Name="RemoteCatchDPadLeft"> <!-- 삭제예정 -->
+		<GamePad Key="padL" Method="release"/>
+	</>
+	<Input Name="RemoteCatchDPadRight"> <!-- 삭제예정 -->
+		<GamePad Key="padR" Method="release"/>
+	</>
+
+	<Input Name="RemoteCatch_ControlRotation_Left">
+		<GamePad Name="OverridePadKey" Key="padL" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatch_ControlRotation_Right">
+		<GamePad Name="OverridePadKey" Key="padR" Method="downonce"/>
+	</>	
+	<Input Name="RemoteCatch_ControlRotation_Up">
+		<GamePad Name="OverridePadKey" Key="padU" Method="downonce"/>
+	</>	
+	<Input Name="RemoteCatch_ControlRotation_Down">
+		<GamePad Name="OverridePadKey" Key="padD" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatch_ControlRotation_Mouse">
+		<KeyboardMouse Key="mouseWheel" Method="analog"/>
+	</>
+	<Input Name="RemoteCatch_ControlRotation_Mouse_ControlYaw">
+		<KeyboardMouse Key="ctrl" Method="press"/>
+		<KeyboardMouse Key="ctrl" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatch_HingeRotation_CCW">
+		<GamePad Name="OverridePadKey" Key="padL" Method="press"/>
+		<GamePad Name="OverridePadKey" Key="padL" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatch_HingeRotation_CW">
+		<GamePad Name="OverridePadKey" Key="padR" Method="press"/>
+		<GamePad Name="OverridePadKey" Key="padR" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatch_HingeRotation_Wheel">
+		<KeyboardMouse Key="mouseWheel" Method="analog"/>
+	</>
+	<Input Name="RemoteCatch_ControlRotation_UI">
+		<GamePad Key="padR" Method="downonce" AnalogScaleX="1.000000" AnalogScaleY="0.000000"/>
+		<GamePad Key="padL" Method="downonce" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+		<GamePad Key="padU" Method="downonce" AnalogScaleX="0.000000" AnalogScaleY="1.000000"/>
+		<GamePad Key="padD" Method="downonce" AnalogScaleX="0.000000" AnalogScaleY="-1.000000"/>
+		<KeyboardMouse Key="mouseWheel ctrl" Method="analog press"/>
+		<KeyboardMouse Key="mouseWheel" Method="analog"/>
+	</>
+	<Input Name="RemoteCatch_HingeRotation_CCW_UI">
+		<GamePad Key="padL" Method="press"/>
+		<GamePad Key="padL" Method="downonce"/>
+		<KeyboardMouse Key="mouseWheel" Method="analog"/>
+	</>
+	<Input Name="RemoteCatch_HingeRotation_CW_UI">
+		<GamePad Key="padR" Method="press"/>
+		<GamePad Key="padR" Method="downonce"/>
+		<KeyboardMouse Key="mouseWheel" Method="analog"/>
+	</>
+	<Input Name="RemoteCatch_Housing_ControlRotation_UI">
+		<GamePad Key="buttonLB" Method="downonce"/>
+		<GamePad Key="buttonRB" Method="downonce"/>
+		<KeyboardMouse Key="q" Method="downonce"/>
+		<KeyboardMouse Key="e" Method="downonce"/>
+		<KeyboardMouse Key="mouseX1" Method="downonce"/>
+		<KeyboardMouse Key="mouseX2" Method="downonce"/>
+		<!-- <KeyboardMouse Key="mouseWheel" Method="analog"/> -->
+	</>
+	<Input Name="RemoteCatch_Housing_MoveSlow_UI">
+		<GamePad Key="buttonLT" Method="press"/>
+	</>
+	<Input Name="RemoteCatch_Housing_ControlDeatil_UI">
+		<GamePad Key="padR" Method="press"/>
+		<GamePad Key="padR" Method="downonce"/>
+		<GamePad Key="padL" Method="press"/>
+		<GamePad Key="padL" Method="downonce"/>
+		<GamePad Key="padU" Method="press"/>
+		<GamePad Key="padU" Method="downonce"/>
+		<GamePad Key="padD" Method="press"/>
+		<GamePad Key="padD" Method="downonce"/>
+		<!-- <KeyboardMouse Key="d" Method="press"/> -->
+		<!-- <KeyboardMouse Key="a" Method="press"/> -->
+		<!-- <KeyboardMouse Key="w" Method="press"/> -->
+		<!-- <KeyboardMouse Key="s" Method="press"/> -->
+		<KeyboardMouse Key="mouseDelta" Method="analog"/>
+	</>
+	<Input Name="RemoteCatch_Housing_ControlCamera_UI">
+		<GamePad Key="leftstick" Method="analog"/>
+		<KeyboardMouse Key="w" Method="press"/>
+		<KeyboardMouse Key="w" Method="downonce"/>
+		<KeyboardMouse Key="a" Method="press"/>
+		<KeyboardMouse Key="a" Method="downonce"/>
+		<KeyboardMouse Key="s" Method="press"/>
+		<KeyboardMouse Key="s" Method="downonce"/>
+		<KeyboardMouse Key="d" Method="press"/>
+		<KeyboardMouse Key="d" Method="downonce"/>
+		<KeyboardMouse Key="mouseMove mouseL" Method="analog press"/>
+	</>
+	<Input Name="RemoteCatch_Housing_ControlRotateCamera_UI">
+		<KeyboardMouse Key="lshift mouseWheel" Method="press analog"/>
+	</>
+
+	<Input Name="RemoteCatch_Housing_ControlRotation_Up">
+		<GamePad Key="padU" Method="press"/>
+	</>	
+	<Input Name="RemoteCatch_Housing_ControlRotation_Down">
+		<GamePad Key="padD" Method="press"/>
+	</>
+	<Input Name="RemoteCatch_Housing_ControlRotation_Left">
+		<GamePad Key="buttonLB" Method="downonce"/>
+		<KeyboardMouse Key="q" Method="downonce"/>
+		<KeyboardMouse Key="mouseX1" Method="downonce"/>
+	</>
+	<Input Name="RemoteCatch_Housing_ControlRotation_Right">
+		<GamePad Key="buttonRB" Method="downonce"/>
+		<KeyboardMouse Key="e" Method="downonce"/>
+		<KeyboardMouse Key="mouseX2" Method="downonce"/>
+	</>
+	<Input Name="Housing_ControlCamera_Zoom_UI">
+		<GamePad Key="select" Method="downonce"/>
+		<KeyboardMouse Key="mouseWheel" Method="analog"/>
+	</>
+	<Input Name="Housing_RotateCamera_UI">
+		<GamePad Key="rightstick" Method="analog"/>
+		<KeyboardMouse Key="mouseMove mouseR" Method="analog press"/>
+	</>
+	<!-- <Input Name="Key_Housing_Detail_Left"> -->
+		<!-- <GamePad Key="padL" Method="press"/> -->
+		<!-- <KeyboardMouse Key="a" Method="press"/> -->
+	<!-- </> -->
+	<!-- <Input Name="Key_Housing_Detail_Right"> -->
+		<!-- <GamePad Key="padR" Method="press"/> -->
+		<!-- <KeyboardMouse Key="d" Method="press"/> -->
+	<!-- </> -->
+	<!-- <Input Name="Key_Housing_Detail_Up"> -->
+		<!-- <GamePad Key="padU" Method="press"/> -->
+		<!-- <KeyboardMouse Key="w" Method="press"/> -->
+	<!-- </> -->
+	<!-- <Input Name="Key_Housing_Detail_Down"> -->
+		<!-- <GamePad Key="padD" Method="press"/> -->
+		<!-- <KeyboardMouse Key="s" Method="press"/> -->
+	<!-- </> -->
+
+	<Input Name="Key_Housing_Pick">
+		<GamePad Key="buttonLS" Method="press"/>
+		<GamePad Key="buttonLS" Method="downonce"/>
+		<KeyboardMouse Key="ctrl" Method="press"/>
+		<KeyboardMouse Key="ctrl" Method="downonce"/>
+	</>
+
+	<Input Name="RemoteCatch_ControlPosition">
+		<GamePad Key="rightstick" Method="analog"/>
+		<KeyboardMouse Key="mouseDelta" Method="analog" AnalogScaleX="1.000000" AnalogScaleY="-1.000000"/>
+	</>
+	<!-- 섭리의 힘 당기기 -->
+		<Input Name="RemoteCatch_ControlPosition_Pull">
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseL" Method="downonce"/>
+		</>
+	<!-- 섭리의 힘 밀기 -->
+		<Input Name="RemoteCatch_ControlPosition_Push">
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonRT" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="press"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+
+	<!-- 키보드, 마우스 조작시에만 제공하는 기능-->
+	<Input Name="RemoteCatch_ControlPosition_Precision">
+		<GamePad Key="buttonLB" Method="doubleclick"/>
+		<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="press"/>
+		<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+		<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="press"/>
+		<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+	</>
+		<Input Name="ToggleLockOn">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="doubleclick"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="doubleclick"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="doubleclick"/>
+		</>
+		<Input Name="LockOnPress">
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="press"/>
+			<GamePad Name="OverridePadKey" Key="buttonLB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="press"/>
+			<KeyboardMouse Name="OverrideKey1" Key="ctrl" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="press"/>
+			<KeyboardMouse Name="OverrideKey2" Key="mouseX1" Method="downonce"/>
+		</>
+	<!-- 대상 고정 -->
+		<Input Name="ToggleHardLockOn">
+			<GamePad Name="OverridePadKey" Key="padD" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="caps" Method="downonce"/>
+		</>
+		<Input Name="Key_TerrainInteraction">
+			<GamePad Name="OverridePadKey" Key="padD" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="caps" Method="downonce"/>
+		</>
+	<!-- 목표 지정 -->
+		<Input Name="Key_DeadEyeTargetting" ConsumeOnUse="True">
+			<GamePad Name="OverridePadKey" Key="buttonRB" Method="downonce"/>
+			<KeyboardMouse Name="OverrideKey" Key="mouseR" Method="downonce"/>
+		</>
+
+	<Input Name="SubInteraction_PadLeft">
+		<GamePad Key="padL" Method="downonce"/>
+		<KeyboardMouse Key="a" Method="downonce"/>
+	</>
+	<Input Name="SubInteraction_PadRight">
+		<GamePad Key="padR" Method="downonce"/>
+		<KeyboardMouse Key="d" Method="downonce"/>
+	</>
+	<Input Name="SubInteraction_PadUp">
+		<GamePad Key="padU" Method="downonce"/>
+		<KeyboardMouse Key="w" Method="downonce"/>
+	</>
+	<Input Name="SubInteraction_PadDown">
+		<GamePad Key="padD" Method="downonce"/>
+		<KeyboardMouse Key="s" Method="downonce"/>
+	</>		
+</InputGroup>
+<InputGroup Name="PlayerCameraFunction" LayerName="Camera">
+	<Input Name="CameraDistance">
+		<KeyboardMouse Key="mouseWheel" Method="analog"/>
+	</>
+	<Input Name="CameraOffsetDown">
+		<KeyboardMouse Key="down" Method="press"/>
+		<KeyboardMouse Key="down" Method="downonce"/>
+	</>
+	<Input Name="CameraOffsetLeft">
+		<KeyboardMouse Key="left" Method="press"/>
+		<KeyboardMouse Key="left" Method="downonce"/>
+	</>
+	<Input Name="CameraOffsetRight">
+		<KeyboardMouse Key="right" Method="press"/>
+		<KeyboardMouse Key="right" Method="downonce"/>
+	</>
+	<Input Name="CameraOffsetUp">
+		<KeyboardMouse Key="up" Method="press"/>
+		<KeyboardMouse Key="up" Method="downonce"/>
+	</>
+	<Input Name="SelectCameraDistance">
+		<GamePad Key="select" Method="downonce"/>
+	</>
+	<Input Name="MainMenu">
+		<GamePad Key="start" Method="downonce"/>
+	</>
+</InputGroup>

@@ -814,6 +814,10 @@
 		<KeyboardMouse Key="r" Method="release"/>
 		<KeyboardMouse Key="mouseM" Method="release"/>
 	</>
+	<Input Name="Key_Housing_OpenManagementMenu">
+		<GamePad Key="buttonB" Method="release"/>
+		<KeyboardMouse Key="t" Method="release"/>
+	</>
 	<Input Name="Key_Housing_ChangeHouse">
 		<GamePad Key="buttonRS" Method="release"/>
 		<KeyboardMouse Key="f1" Method="release"/>

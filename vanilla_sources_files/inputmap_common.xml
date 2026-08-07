@@ -3924,6 +3924,12 @@
 		<GamePad Key="rightstick" Method="analog" AnalogScaleX="1.000000" AnalogScaleY="0.000000"  AnalogDeadZone="0.8"/>
 		<KeyboardMouse Key="mouseMove" Method="analog"/>
 	</>
+	<Input Name="NpcStoreWorldMapTradeFilter">
+		<GamePad Key="buttonY" Method="downonce"/>
+		<GamePad Key="buttonY" Method="release"/>
+		<KeyboardMouse Key="r" Method="downonce"/>
+		<KeyboardMouse Key="r" Method="release"/>
+	</>
 </InputGroup>
 
 <InputGroup Name="KuKuEnchantPanel" LayerName="UIHud_4" BlockLowLayer="True">
@@ -4053,6 +4059,12 @@
 		<GamePad Key="buttonRB" Method="release"/>
 		<KeyboardMouse Key="c" Method="downonce"/>
 		<KeyboardMouse Key="c" Method="release"/>
+	</>
+	<Input Name="NpcStoreTradeWorldMapTradeFilter">
+		<GamePad Key="buttonY" Method="downonce"/>
+		<GamePad Key="buttonY" Method="release"/>
+		<KeyboardMouse Key="r" Method="downonce"/>
+		<KeyboardMouse Key="r" Method="release"/>
 	</>
 </InputGroup>
 
@@ -4318,6 +4330,12 @@
 		<KeyboardMouse Key="space" Method="downonce"/>
 		<KeyboardMouse Key="space" Method="release"/>
 	</>
+	<Input Name="ToggleShipCrewMercenary">
+		<GamePad Name="OverridePadKey" Key="buttonA" Method="downonce"/>
+		<GamePad Name="OverridePadKey" Key="buttonA" Method="release"/>
+		<KeyboardMouse Key="space" Method="downonce"/>
+		<KeyboardMouse Key="space" Method="release"/>
+	</>
 </InputGroup>
 
 <InputGroup Name="OperationManagementPanel" LayerName="UIMainMenu" BlockLowLayer="True">
@@ -4533,8 +4551,31 @@
 	<Input Name="PondCameraMoveDummy">
 		<GamePad Key="rightstick" Method="analog"/>
 		<KeyboardMouse Key="mouseMove mouseL" Method="analog press"/>
-	</>	
-
+	</>
+	<Input Name="ManagementChangeNameOpen">
+		<GamePad Key="buttonLS" Method="downonce"/>
+		<GamePad Key="buttonLS" Method="release"/>
+		<KeyboardMouse Key="g" Method="downonce"/>
+		<KeyboardMouse Key="g" Method="release"/>
+	</>
+	<Input Name="ManagementOpen">
+		<GamePad Key="buttonX" Method="downonce"/>
+		<GamePad Key="buttonX" Method="release"/>
+		<KeyboardMouse Key="f" Method="downonce"/>
+		<KeyboardMouse Key="f" Method="release"/>
+	</>
+	<Input Name="NeedListMoveUp" Consume="True">
+		<GamePad Key="padU" Method="downonce"/>
+		<GamePad Key="padU" Method="release"/>
+		<KeyboardMouse Key="w" Method="downonce"/>
+		<KeyboardMouse Key="w" Method="release"/>
+	</>
+	<Input Name="NeedListMoveDown" Consume="True">
+		<GamePad Key="padD" Method="downonce"/>
+		<GamePad Key="padD" Method="release"/>
+		<KeyboardMouse Key="s" Method="downonce"/>
+		<KeyboardMouse Key="s" Method="release"/>
+	</>
 </InputGroup>
 
 <InputGroup Name="ArtifactListPanel" LayerName="UIMainMenu" BlockLowLayer="True">
@@ -5259,6 +5300,18 @@
 		<GamePad Key="buttonX" Method="downonce"/>
 		<GamePad Key="buttonX" Method="release"/>
 	</>
+	<Input Name="InstallRotateRight">
+		<GamePad Key="padR" Method="downonce" AnalogScaleX="1.000000" AnalogScaleY="0.000000"/>
+		<GamePad Key="padR" Method="release" AnalogScaleX="1.000000" AnalogScaleY="0.000000"/>
+		<KeyboardMouse Key="c" Method="downonce" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+		<KeyboardMouse Key="c" Method="release" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+	</>
+	<Input Name="InstallRotateLeft">
+		<GamePad Key="padL" Method="downonce" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+		<GamePad Key="padL" Method="release" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+		<KeyboardMouse Key="z" Method="downonce" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+		<KeyboardMouse Key="z" Method="release" AnalogScaleX="-1.000000" AnalogScaleY="0.000000"/>
+	</>
 </InputGroup>
 
 <InputGroup Name="CraftTransferPanel" LayerName="UIHud_4">
@@ -5849,6 +5902,9 @@
 	<Input Name="Debug_Button2">
 		<GamePad Key="buttonB" Method="press"/>
 	</>
+	<Input Name="Debug_Button2_DownOnce">
+		<GamePad Key="buttonB" Method="downonce"/>
+	</>
 	<Input Name="Debug_Button3">
 		<GamePad Key="buttonY" Method="press"/>
 	</>
@@ -5887,6 +5943,9 @@
 	</>
 	<Input Name="Debug_LeftTrigger">
 		<GamePad Key="buttonLT" Method="downonce"/>
+	</>
+	<Input Name="Debug_LeftTrigger_Analog">
+		<GamePad Key="buttonLT" Method="analog"/>
 	</>
 	<Input Name="Debug_MouseDelta">
 		<KeyboardMouse Key="mouseDelta" Method="analog"/>
@@ -5930,6 +5989,9 @@
 	</>
 	<Input Name="Debug_RightTrigger">
 		<GamePad Key="buttonRT" Method="downonce"/>
+	</>
+	<Input Name="Debug_RightTrigger_Analog">
+		<GamePad Key="buttonRT" Method="analog"/>
 	</>
 	<Input Name="Debug_S">
 		<KeyboardMouse Key="s" Method="downonce"/>
